@@ -5940,12 +5940,16 @@ td.visible-print {
   }
 }
 h1,
-h2,
+
 h3,
 h4,
 h5,
 h6 {
   color: #455860;
+}
+h2
+{
+  color:#598EA5;
 }
 blockquote {
   border-left: 3px solid #D7DFE2;

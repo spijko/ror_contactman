@@ -1,4 +1,10 @@
-<h1>Listing contacts</h1> 
+<h2>Listing contacts</h2>
+
+<%= form_tag '/contacts/search', :method => :get do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "search", :name => :nil %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -30,7 +36,8 @@
 </table>
 
 <br>
-
+<ul>
 <%= link_to 'New Contact', new_contact_path %>
 <%= link_to 'Sort Contact by Ascending Order', :controller => 'contacts_sorter',:action=>:index%>
 <%= link_to 'Sort Contact by Descending order', {:controller => 'contacts_sorter', :action => :desc}%>
+</ul>

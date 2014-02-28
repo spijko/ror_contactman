@@ -23,6 +23,13 @@ end
     @contact = Contact.new
   end
 
+  def search 
+      @search_q = params[:query]
+     
+      @contacts = Contact.where("LOWER(last_name) like '%#{@search_q.downcase}%'" )#uses thinking sphinx
+
+     render 'index'
+  end
   # GET /contacts/1/edit
   def edit
   end

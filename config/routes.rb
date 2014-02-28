@@ -1,14 +1,18 @@
 Conapp::Application.routes.draw do
  
-
+  root :to => 'contacts#index'
   get 'contacts_sorter/asc' => 'contacts_sorter#asc', :as => :asc_sort
   get 'contacts_sorter/desc' => 'contacts_sorter#desc',:as => :desc_sort
-  get ':controller/:action'
   
-  root :to => 'contacts#index'
-  resources :contacts
+ get '/search/:query' => 'contacts#search', :as => "search"  
+  resources :contacts do
+    collection do
+      get 'search'
+   
+    end
+  end
   resources :contacts_sorter
-     
+  #get 'contacts/search' => 'contacts#search'   
   
   #get 'contacts/show', :to => 'contacts#sort'
   #resources :tests
