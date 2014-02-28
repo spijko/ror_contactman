@@ -1,7 +1,17 @@
 Conapp::Application.routes.draw do
-  resources :contacts
+ 
 
-  resources :tests
+  get 'contacts_sorter/asc' => 'contacts_sorter#asc', :as => :asc_sort
+  get 'contacts_sorter/desc' => 'contacts_sorter#desc',:as => :desc_sort
+  get ':controller/:action'
+  
+  root :to => 'contacts#index'
+  resources :contacts
+  resources :contacts_sorter
+     
+  
+  #get 'contacts/show', :to => 'contacts#sort'
+  #resources :tests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

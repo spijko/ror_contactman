@@ -20,10 +20,7 @@
         <td><%= contact.last_name %></td>
         <td><%= contact.email %></td>
         <td><%= contact.address %></td>
-        <td><%= contact.phone_number %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact.phone_number %></td> 
       </tr>
     <% end %>
   </tbody>
@@ -31,6 +28,4 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
-<%= link_to 'Sort Contact by Ascending Order', :controller => 'contacts_sorter',:action=>:index%>
-<%= link_to 'Sort Contact by Descending order', {:controller => 'contacts_sorter', :action => :desc}%>
+<%= link_to 'Home', :controller => :contacts, :action => :index%>

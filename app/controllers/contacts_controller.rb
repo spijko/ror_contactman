@@ -15,7 +15,8 @@ class ContactsController < ApplicationController
 
 def sort
   #code
-  @contacts = Contact.order('first_name desc') 
+  #@contacts = Contact.order('first_name desc')
+  redirect_to 'sort'
 end
   # GET /contacts/new
   def new
